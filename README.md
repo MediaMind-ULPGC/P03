@@ -33,7 +33,9 @@ while True:
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
 ```
-
+<div align="center">
+  <img src="gif/video2.gif" alt="Gif Ejercicio 1" />
+</div>
 
 ## Ejercicio 2. 
 Ecualiza el histograma de la imagen imagen3.png y luego elimina el ruido utilizando un filtro bilateral con un diámetro d=10 y valores de sigma de 11 y 11. Guarda el resultado como imagen3_salida.png.
