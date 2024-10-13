@@ -82,6 +82,7 @@ Finalmente, las imágenes resultantes de la ecualización de color y el filtro b
 Se guarda la imagen resultante de la equalización de color y el filtro bilateral en un archivo PNG ya ue es aquella que proporciona mejores resultados.
 
 ## Ejercicio 3. 
+
 Con la `imagen4.jpg`, crea un vídeo de 100 frames aplicando un filtro mediano de radio (`ksize`) igual a 7. Aplica el filtro en cada iteración al resultado de la iteración anterior. Guarda el vídeo con el nombre `video4.mp4`.
 
 Para realizar dicha actividad se aplica un filtro de desenfoque de mediana y se guardan 100 fotogramas en el video, donde en cada iteración el filtro de desenfoque es aplicado progresivamente sobre la imagen.
@@ -95,7 +96,7 @@ for i in range(frames):
     video_writer.write(current_img)
 ```
 
-Luego, se muestra el video resultante en bucle el cual queda plasmado en la Figura X que se muestra como GIF a continuación.
+A continuación, en la Figura X se presenta el video generado, visualizado como un GIF que muestra el efecto de la aplicación iterativa del filtro de desenfoque.
 
 <div align="center">
   <img src="gif/video4.gif" alt="Gif Ejercicio 3" />
