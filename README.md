@@ -55,18 +55,21 @@ gray_equalized = cv.equalizeHist(gray)
 ```
 
 <div align="center">
+   
 | <img src="gif/imagen3_gray.png" alt="Img 1 Ejercicio 2" width="400"/> | <img src="gif/imagen3_gray_equalized.png" alt="Img 2 Ejercicio 2" width="400"/> |
 |:--:|:--:|
 | **Figura 2.** Imagen de entrada a color. | **Figura 3.** Imagen de entrada en escala de grises. |
+   
 </div>
 
 <div align="center">
-| <img src="gif/imagen3_colour_equalized_histogram.png" alt="Img 3 Ejercicio 2" width="300"/> | <img src="gif/imagen3_colour_equalized_histogram.png" alt="Img 4 Ejercicio 2" width="300"/> |
+   
+| <img src="gif/imagen3_colour_equalized_histogram.png" alt="Img 3 Ejercicio 2" width="400"/> | <img src="gif/imagen3_gray_equalized_histogram.png" alt="Img 4 Ejercicio 2" width="400"/> |
 |:--:|:--:|
 | **Figura 4.** Histograma ecualizado de la imagen de la Figura 2. | **Figura 5.** Histograma ecualizado de la imagen de la Figura 3.  |
+
 </div>
 
-# FAKTA PONER LOS HUISTOGAMAS
 
 2. **Eliminación del ruido**. Posteriormente, se aplica un filtro bilateral con un diámetro $d=10$ y valores de $\sigma$ en el espacio de color y en el espacio de intensidad de $11$ en ambas imágenes, la ecualizada en escala de grises y la ecualizada a color.
 
