@@ -46,8 +46,58 @@ while True:
 Ecualiza el histograma de la imagen `imagen3.png` y luego elimina el ruido utilizando un filtro bilateral con un diámetro $d=10$ y valores de $\sigma$ de $11$ y $11$. Guarda el resultado como `imagen3_salida.png`.
 
 **Flujo del programa**
-1.**Ecualizado de la imagen**. Se aplica la ecualización del histograma a la imagen en escala de grises y se ecualizan los canales de color.
+
+1.**Ecualizado de la imagen**. En este paso, se realiza la ecualización del histograma de la imagen en escala de grises. Además, se ecualizan los canales de color por separado. Posteriormente, se muestran los histogramas correspondientes a las imágenes ecualizadas.
+
+```python
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+gray_equalized = cv.equalizeHist(gray)
+```
 
 # FALTA PONER LAS DOS IMAGENES
+# FAKTA PONER LOS HUISTOGAMAS
 
-2. **Eliminación del ruido**
+2. **Eliminación del ruido**. Posteriormente, se aplica un filtro bilateral con un diámetro $d=10$ y valores de $\sigma$ en el espacio de color y en el espacio de intensidad de $11$ en ambas imágenes, la ecualizada en escala de grises y la ecualizada a color.
+
+```python
+# Filtro bilateral en la imagen en escala de grises
+bilateral_gray_equalized = gray_equalized
+for _ in range(10):
+    bilateral_gray_equalized = cv.bilateralFilter(bilateral_gray_equalized, 10, 11, 11)
+    image = bilateral_gray_equalized
+    cv.imshow('Bilateral - gray_equalized', image)
+
+# Filtro bilateral en la imagen con colores equalizados
+bilateral_colours_equalized = colour_equalized
+for _ in range(10):
+    bilateral_colours_equalized = cv.bilateralFilter(bilateral_colours_equalized, 10, 11, 11)
+    image = bilateral_colours_equalized
+    cv.imshow('Bilateral - color_equalized', image)
+```
+
+Finalmente, las imágenes resultantes de la ecualización de color y el filtro bilateral se muestran en las siguientes figuras.
+
+# imageens
+
+Se guarda la imagen resultante de la equalización de color y el filtro bilateral en un archivo PNG ya ue es aquella que proporciona mejores resultados.
+
+## Ejercicio 3. 
+Con la `imagen4.jpg`, crea un vídeo de 100 frames aplicando un filtro mediano de radio (`ksize`) igual a 7. Aplica el filtro en cada iteración al resultado de la iteración anterior. Guarda el vídeo con el nombre `video4.mp4`.
+
+Para realizar dicha actividad se aplica un filtro de desenfoque de mediana y se guardan 100 fotogramas en el video, donde en cada iteración el filtro de desenfoque es aplicado progresivamente sobre la imagen.
+```python
+frames = 100
+ksize = 7
+current_img = img.copy()
+
+for i in range(frames):
+    current_img = cv.medianBlur(current_img, ksize)
+    video_writer.write(current_img)
+```
+
+Luego, se muestra el video resultante en bucle el cual queda plasmado en la Figura X que se muestra como GIF a continuación.
+
+<div align="center">
+  <img src="gif/video4.gif" alt="Gif Ejercicio 3" />
+    <p><strong>Figura X.</strong> Video resultante del ejercicio 3.</p> 
+</div>
