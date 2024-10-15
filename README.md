@@ -201,17 +201,19 @@ Finalmente, las siguientes figuras muestran la imagen original y las imágenes r
 
 Mezcla las imágenes `imagen7_1.jpg` e `imagen7_2.png` de forma no lineal utilizando la siguiente expresión:
 
-$$ I_3 = \frac{ 1+ \cos{(\frac{\alpha}{180}\pi )}}{2} I_1 + \frac{ 1- \cos{(\frac{\alpha}{180}\pi )}}{2} I_2$$ 
+$$I_3 = \frac{ 1+ \cos{(\frac{\alpha}{180}\pi )}}{2} I_1 + \frac{ 1- \cos{(\frac{\alpha}{180}\pi )}}{2} I_2$$ 
 
 Crea un vídeo de 360 frames aumentando el ángulo en 1° en cada iteración y guárdalo con el nombre de `video7.mp4`.
+
 
 <div align="center">
    
 | <img src="images/imagen7_1.jpg" alt="Img 1 Ejercicio 6" width="400"/> | <img src="images/imagen7_2.png" alt="Img 2 Ejercicio 6" width="400"/> |
 |:--:|:--:|
 | **Figura 15.** `Imagen7_1`. | **Figura 16.** `Imagen7_2`.  |
+   
+</div>
 
-<\div>
 
 1. **Definir la función de mezcla no lineal**. Esta función calcula la mezcla entre las dos imágenes `img_1` e `img_2` usando la fórmula matemática dada.
 ```python
